@@ -1,0 +1,53 @@
+Telnet is designed to comunicate with other units on the web, but aren't limited to only using HTTP
+
+download Telnet on terminal, check external sources to figure out how 
+
+#to communicate with a server on the internet type these commands in terminal:
+
+        1. telnet httpbin.org 80 
+
+#this is the default port(80) by specifing adress and port, as long as there is content on that server, you should be able to comunicate with it.
+
+        2. GET / HTTP/ 1.1 //Extensible markup language(GET /xml HTTP) 
+
+#A Get request that specifies what we want to fetch, in this case the HTTP request. We can also fetch the XML request. 1.1 is the version
+
+        3. Host: httpbin.org #Hit enter twice after this "sat", so that your request don't time out.
+      
+      -------------------------------------------------------------------------------------------------------------------------------
+        telnet httpbin.org 80 
+
+        Request-line = GET|POST [uri] HTTP/[version] = GET/xml HTTP/1.1
+        Headers = [Header Name]: [Header Value](each on its own line) = Host: httbin.org, User-Agent: telnet, Accept-Language: en-US
+        Blank Line
+        Request Body(Optional, only for POST requests)= the payload
+        
+        
+        Status-Line = HTTP/[version][status code][status message] = HTTP/1.1 (200 OK,404 page not find, 500 server error)
+        Headers = [Header Name]: [Header Value](each on its own line)= Server:ngnx, Date: (date), Content-Type: application/xml
+        <slideshow (...) slideshow> 
+        
+        -------------------------------------------------------------------------------------------------------------------------------
+
+GET REQUESTS:
+
+    GET/get?firstname=Hanna&Lastname=Skaalvik HTTP/1.1 #Fungerer som en query string (SELECT ... FROM ...) og lar brukeren finne relevant informasjon
+    
+    The respone will be represented in a JSON(Javascript object Notation) format. This get request do not modify the original data. 
+    
+    The content-length header shows the length of the response payload in bytes!
+    
+POST REQUESTS:
+
+    To do a post request type:
+    POST/ post HTTP/1.1
+    please also include the Host and content-length in the header
+    
+    #remember two linespaces before issuing your querystring. This string will be posted to the adress you 
+    set at the post request in the header (Modifying). It is important that the content lenght is correct, else it will raise and error.
+
+GUI:
+    In chrome developer tool, you can access the Network tab and it will act as a GUI. You can explore this 
+    tab and get familiar with the similarities between the GUI version and the terminal version!
+
+

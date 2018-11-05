@@ -1,0 +1,64 @@
+FULLFØRTE TASKS:
+    ✔ ta forsøksbilder/video som jeg kan eksperimentere med @done (2018-6-21 22:29:43)
+    ✔ Starte med selve nettsiden @today @done (2018-6-24 01:54:53)
+    ✔ Bildekarusell med de forskjellige rettene [prototype] @done (2018-6-21 22:29:47)
+    ✔ fjerne linkens visuelle side til logoen vår @done (2018-6-25 16:30:37)
+    ✔ Lage alle php sidene som skal være på nettsiden, trenger ikke ha noe innhold enda! @done (2018-6-25 22:30:21)
+    ✔ Style select tagen, skal jeg ha tag eller drop down meny ved hower? @done (2018-6-26 15:26:56)
+    ✔ Lag footer elementet @done (2018-6-26 16:50:43)
+    ✔ bildekarusellen er ikke ferdig den er ikke i riktig form heller @done (2018-7-2 15:04:08)
+    ✔ linke footer elementene til de forskjellige sidene og appen @done (2018-7-3 12:02:28)
+    ✔ Fikse kontakt oss panelet med implementering av funksjonell sending av email @done (2018-7-3 13:59:54)
+    ✔ Resturant side @done (2018-7-3 21:21:09)
+    ✔ Om oss side @done (2018-7-3 21:21:16)
+    ✔ adminSideCreate @done (2018-7-5 22:06:15)
+    ✔ Gjøre ferdig utvalgspanelet slik at det funker (Se tidligere kode , bruk remarkable! ) @done (2018-7-15 14:04:19)
+    ✔ Koble opp mot databasen @done (2018-7-15 14:04:22)
+    ✔ Lage en tabell på admin siden som henter ut informasjon fra databasen slik at jeg kan manuelt fjerne de varene vi ikke skal ha lenger @done (2018-7-18 02:07:24)
+    ✔ Legge til bilde upload så bildet lagres med objektet @done (2018-7-21 22:20:58)
+    ✔ Lage slette knappen for elementene på admin siden @done (2018-7-21 22:50:32)
+    ✔ Lage feature funksjonen @done (2018-7-22 14:07:33)
+    ✔ Designe admin siden og legge til funksjonalitet @done (2018-7-22 14:07:48)
+    ✔ Avansert Bildekarusell @done (2018-8-8 14:01:03)
+    ✔ Sessions så man ikke kan nå admin siden uten en aktiv session @done (2018-8-12 03:20:19)
+    ✔ Lage index feature siden (UTEN BILDER FOR NÅ) @done (2018-8-13 22:59:45)
+    ✔ Øke sikkerheten på siden @done (2018-8-14 01:36:38)
+    ✔ Endre bildekarusellen @done (2018-8-19 13:28:37)
+    ✔ oppgradere grafikken på nettsiden og style @done (2018-8-19 13:28:54)
+    ✔ Endre utseende på nettsiden. @done (2018-8-19 13:29:09)
+    ✔ vise bilder på nettsidedn fra en blob (FEATURED SIDEN); @done (2018-8-30 16:26:11)
+    ✔ Lage kjøpe siden @done (9/19/2018, 11:33:23 PM)
+    ✔ Legge til informasjonsknapp på hvert av alternativene @done (9/20/2018, 9:31:51 PM)
+    ✔ Ha en fungerende handlekurv som viser hva man har @done (9/20/2018, 9:31:58 PM)
+    ✔ Lage et ordensskjema @done (10/2/2018, 6:58:45 PM)
+    ✔ koble orderen opp til admin siden @done (10/3/2018, 1:05:59 PM)
+
+NESTE TASKS: 
+
+☐ Handdlekurv som skal bli sent via sms/epost når kunden vil bestille
+☐ Admin side skal være en total oversikt over hvordan alt går (salg)
+☐ Linke read more knappene til den spesifikke varen på online siden. Bruk <a href="#noe her">
+☐ bilde opplastnings begrenninger
+☐ Lage siden responsiv
+
+GJENNSTÅENDE TASK:
+☐ Designe layouten @critical  
+    ☐ Lage ny logo?
+    ☐ Nye fargekombinasjoner?
+    ☐ Nye fonter?
+    ☐ Lage tilpassede bildekarusell bilder
+    ☐ Fikse bugs
+☐ Gi en preview i hva kunden har bestilt på skjemaet?
+
+☐ php & mySQL databse implementert i nettsiden @high 
+    ☐ Språk instillinger
+    ☐ sikkerhet
+   
+   
+    
+
+
+
+
+
+ 

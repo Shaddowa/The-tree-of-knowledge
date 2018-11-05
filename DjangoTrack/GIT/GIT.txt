@@ -1,0 +1,116 @@
+git --help 
+
+GIT is a version controll system and helps you controll
+the different versions of your project. The reason why GIT is so popular
+is because it is a distributed version control system as opposed to a
+centralized system.
+
+To execute git commands, preferably use a terminal.
+
+comand body:
+        git [insert subcommand here]
+        
+IMPORTANT SUBCOMMANDS
+-git clone
+-git init
+-git add
+-git status
+-git commit
+-git log
+-git mv
+-git rm
+-git push
+-git pull
+
+#initiate a new repository within a directory. It will create a hidden .git directory. to show all hidden files, type ls -a(#stands for all). But you 
+would normaly never modify this file
+
+        git init
+        
+
+#There are three stages every file goes through in the git cycle.
+Modified, staged and committed. Git status will show you the current status
+of your working directory. If you have untracked files, they are not staged to
+the cycle.
+
+        git add [file]
+        
+#If the staged file was a mistake, you can unstage a file with the command
+        
+        git reset HEAD [file]
+        
+#When a file is ready to be commited, you essentially push the file up to distributed version controll system. Here everyone that have access to the
+repo can get the changes you make. 
+
+#This commit will : "something" // should be a standard for commit messages
+
+        git commit -m(#this stands for message) "this is my first commit"
+        
+
+        git config --global user.email "email@email.com"
+        git config --global user.name "username"
+        
+      
+#You can delete files with the command rm [file] however this deletion has not yet been staged and committed. If you are afraid that others are deleting files from their computer and you also will recieve their changes, there are ways to counter this.
+
+        git rm [file] #is similar as rm [file] but are working through git.
+        
+        It let's you delete files directly without having to commit the deletion
+        
+
+        
+    
+        git mv [file] [new file] let's you rename your files! you can also convert
+        
+        the file type. remember to pass the extension in the names!
+        
+        
+        
+        
+        git checkout -- [file/files] #will remove the file from the modified state, and 
+        
+        transitioned it into the previos commited stage. This it the function you would
+        
+        run if you mistakenly deleted a file and need to recover it
+        
+        
+        git log # showes alle the repository history. Here you will also find the commited
+        SHAs and with these keys you can delete the commits.
+        
+        
+        git revert [4 first characters in th SHA / the whole SHA]
+        #if it is the most recent commit, you can simply type: git revert HEAD
+
+#the revert function will also be a commited action that can be reverted again. Such inceptions...
+
+
+        
+        git clone [location of the repository][where you want the file to be cloned]
+        
+        
+#To get acces to the repos available for pushing and pulling, type:
+    
+        git remote #The output will often be "origin", this is the default name
+        
+        but you can rename the reepo.
+        
+          git pull [reepo(origin)] #the reepo name is optional and you can simply do: git
+          
+          pull.
+          
+#if you don't have a reepo, you can add one by typing:
+  
+          git remote add [lowercaps letter name][path/url to the reepo]
+          
+          git pull [remote reposetory] [branch(master)]
+
+NOTE:
+
+if you want to work with github, it will tell you how to initiate a repository and push it to github, or you can add an existing project and then configure github as the remote repo.
+
+
+
+
+
+        
+        
