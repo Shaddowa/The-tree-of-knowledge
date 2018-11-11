@@ -1,0 +1,32 @@
+{% load static from staticfiles %}
+{% load humanize %}
+{% block static %}<link rel="stylesheet" type="text/css" href="{% static 'path' %}"> {% endblock %}
+
+{% with variable = something %}
+    variable|filter
+{% endwith}
+
+{% if condition %}
+
+{% elif condition %}
+
+{% else %}
+
+{% endif %}
+
+
+FILTERS
+|linebreaks -- <br> 
+|join:"something in here"
+|length   .count <-- can replace length and makes the site more efficient
+|pluralize
+|apnumber
+|wordcount
+|truncatewords
+|date:"F j, Y"  <-- can be replaced with another format
+
+
+INNSTALLED_APPS = [ 
+    'django.contrib.humanize'
+]
+

@@ -1,0 +1,159 @@
+# Find out how you use kwargs in django! #
+-------------------DJANGO COMMANDS -----------------------
+pip install Django #installs Django to your computer
+
+django --admin startproject [Projectname]
+python manage.py startapp[appname]
+
+python manage.py runserver [0.0.0.0:8000] <- Optional
+
+python manage.py makemigrations [appname]
+python manage.py migrate
+
+python manage.py shell <- in the tutorial, he populated the models
+directly in the shell
+
+python manage.py createsuperuser  <-- admin user
+
+
+---------------------- DJANGO MODULES ---------------------
+from dddjango.http import HttpResponse
+from django.conf.urls import include, url, path
+from django.contrib import admin
+from django.db import models
+from django.shortcuts import render, get_object_or_404
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.test import TestCase
+from django.utils import timezone
+from django.core.urlresolvers import reverse
+
+
+
+-----------------------DJANGO MODELS --------------------------
+#Acording to Treehouse, Django makes an id field automaticly
+class Example(models.Model):
+    DateTime = models.DateTimeField(auto_now_add=True) <- optional parameters 
+    Charfield = models.CharField(max_length=255)
+    Textfield = models.TextField(blank=True, default='')
+    Integerfield = models.IntegerField(default = 0)
+    Foreignkeyfield = models.ForeignKey(another model)  <---- one to many relationship
+
+    class Meta:
+        ordering = ['order',]   <--- don't really work for me
+    
+    #alters the presentation of this model
+    def __str__(self):
+        return self.title
+
+
+-------------------------DJANGO VIEWS---------------------------------
+
+def example(request):
+
+    #inside here we can configuere 
+    alot of things we wanna save!
+    When we have our variables, we can
+    push them to a dictionary and return the elements
+    to a html page so we can access the information
+    in the dictionary
+
+    return render(request,'[appname]/file.file',{'dictionary': dictinary})
+
+
+def example(request, pk):
+    something = Something.object.get(pk=pk) # same
+    something = get_object_or_404(Something, pk=pk) # same
+    return render(request,'[appnmae]/file.file', {'dict': dict})
+
+def example(request, something1_pk,something2_pk):
+    example = get_object_or_404(Something, something1_id = something1_pk, pk = something2_pk)  <--something1_id is the ForeignKey
+    return --||--
+
+------------------------DJANGO URLS--------------------------------------
+
+urlpatterns =[
+    url/path(the urlPattern, include('[appname].urls', namespace ='namespace_of_urls')),  <-- includes all the appname's urls
+    url/path(the urlPattern, the viewfunction),
+    url/path(r'(?P<pk>\d+)/$', the viewfunction), <-- This have to be rewritten in the newest version...
+    url/path(r'(?P<something1_pk>\d+)/(?P<something2_pk>\d+)/$', the viewfunction),
+    url/path(urlpath, the viewfunction, name="name_of_url")
+]
+
+
+-----------------------DJANGO ADMIN ----------------------------------------------
+#import your models first
+
+class ExampleInline(admin.StackedInline):
+    model = Step
+
+class ExampleAdmin(admin.modelAdmin):
+    inlines = [StepInline,]
+
+admin.site.register(model, exampleAdmin)
+
+
+----------------------DJANGO TEMPLATES ----------------------------------------------------------------
+templates --> [appname] --> templates #conventional way of templating
+
+in settings.py : TEMPLATES : 'DIRS' : []  <--- insert templates folder in list
+['templates',]
+
+{% extends "file.file" %}
+
+{{variables}} <-- prints the variable
+
+#For loops
+{% for item in items %}
+{% endfor %}
+
+{% for example in example.step_set.all %} <--- Not really sure what step_set.all is
+{% endfor %}
+
+{% block title %} {% endblock %}  <-- you can specify 'title' to whatever and use it in another file!
+Inside the blocks, you can determine what will be inside.
+
+{{variable|linebreaks}} <-- the pipe symbol acts as a filter and here we use the linebreak filter
+
+
+<a href="{% url 'name of the url' %}">The url </a>
+<a href="{% url 'name_of_namespace_url:name of the url' %}">The url </a>
+<a href="{% url 'name of the url' pk_fetcher = pk, another_pk_fetcher = another pk %}">The url </a>
+--------------------------STATIC ASSETS -------------------------------------------------------------------
+in settings.py write:
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'assets'),
+    )
+
+in urls.py after importing the needed module, write:
+
+
+    urlpatterns += staticfiles_urlpatterns()
+
+
+in the template you should do:
+
+    {% load static from staticfiles %}
+    <link rel="Stylesheet" href="{% static 'css/layout.css' %}"
+
+--------------------------DJANGO TESTS -----------------------------------------------------------------------
+#Import your models/elements
+
+
+self.assertLess(before, after) <-- test if before < after
+self.assertIn(main element, broad element) <-- test if main element exist in broad element
+self.assertEqual(resp.status_code, 200) <-- checks if the resp variable is a valid url
+self.assertTemplateUsed(resp, 'template') <-- checks if the right template is used
+self.assertContains(resp, self.somehting) <-- checks if a template contain something
+
+class exampleModelTests(TestCase):
+
+    def setUp(self):
+        things you can set up before running your tests
+
+
+    def test_example(self):  <-- function have to start with test_
+        things you wanna test in here
+
+    resp = self.client.get(reverse('namespace:name'))
+
