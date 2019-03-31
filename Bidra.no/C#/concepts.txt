@@ -1,0 +1,47 @@
+--------------------------- DEFAULT CODE WHEN STARTING A NEW PROJECT ---------------------
+using System;
+/* DONT REALLY NEED THIS
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+*/
+
+namespace NumberGuesser
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+ctr + f5 - compiles and run the program
+
+
+string name = "Hanna"; //String
+int age = 20; //Integer
+-----------------------------------------------------------------------------------------------------
+NAMESPACE - a container for classes and functions (can be refrenced)
+VOID - a return type of a particular function (not returning anything)
+STATIC - Not refering to a new instance
+
+
+
+-------------------------------------------------------------------------------------------------------------
+Console.WriteLine(); // prints out string to console line
+Console.WriteLine(name + "is " + age); //Hanna is 20
+Console.WriteLine("{0} is {1}", name, age); //Hanna is 20
+Console.Write(); // next line on same line ? 
+Console.ForegroundColor = ConsoleColor.(color); // Changes the color of the text
+Console.ResetColor(); //Resets the color
+Console.ReadLine(); Gets users output
+
+continue; //Continues?
+
+Int32.Parse(); //Converts to integer
+int.TryParse(); //Checks if conversion to integer was successful
+
+
+Random random = new Random(); -->  int correctNumber = random.Next(1, 11); //Creates a random number between 1 and 10 

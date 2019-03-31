@@ -1,0 +1,118 @@
+#################################################################
+The code is written in Visual Studio because the turtorial did so.
+This page is only for a rundown of the code. It will not execute
+##################################################################
+using System;
+
+
+//Namesoace
+namespace NumberGuesser
+{
+    //Main Class
+    class Program
+    {
+
+        //Entry Point Method
+        static void Main(string[] args)
+        {
+            GetAppInfo(); //Run GetAppInfo function
+
+            GreetUser(); //Ask for username and greet
+            while (true)
+            {
+                //Init correct number
+                //int correctNumber = 7;
+                Random random = new Random();
+
+                //Create a new Random object
+                int correctNumber = random.Next(1, 11);
+                //Init guess var
+                int guess = 0;
+
+                //Ask user for number
+                Console.WriteLine("Guess a number between 1 and 10");
+
+                //While guess is not correct
+                while (guess != correctNumber)
+                {
+                    //Get users input
+                    string input = Console.ReadLine();
+
+                    //Make sure its a number
+                    if (!int.TryParse(input, out guess))
+                    {
+
+                        PrintColorMessage(ConsoleColor.Red, "Please enter an actual number");
+                        continue;
+                    }
+
+                    // Cast to int and put in guess
+                    guess = Int32.Parse(input);
+
+                    //Match guess to correct number
+                    if (guess != correctNumber)
+                    {
+                        PrintColorMessage(ConsoleColor.Red, "Wrong number");
+
+                    }
+                }
+                //Output success message
+                PrintColorMessage(ConsoleColor.Yellow, "You are correct");
+
+
+                //Ask to play again
+                Console.WriteLine("Play Again? [Y or N]");
+
+                //Get Answer
+                string answer = Console.ReadLine().ToUpper();
+                if(answer == "Y")
+                {
+                    continue;
+                }else if (answer == "N")
+                {
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
+        static void GetAppInfo()
+        {
+            // Set app vars
+            string appName = "Number Guesser";
+            string appVersion = "1.0.0";
+            string appAuthor = "Hanna Tronsen";
+
+
+            //Change text color
+            Console.ForegroundColor = ConsoleColor.Magenta;
+
+            //Write out app info
+            Console.WriteLine("{0}: Version {1} by {2}", appName, appVersion, appAuthor);
+
+            //Reset color
+            Console.ResetColor();
+        }
+
+        static void GreetUser()
+        {
+            //Ask users name
+            Console.WriteLine("What is your name?");
+
+            //Get user input
+            string inputName = Console.ReadLine();
+
+            Console.WriteLine("Hello {0}, let's play a game...", inputName);
+        }
+
+        static void PrintColorMessage(ConsoleColor color, string message)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+    }
+}

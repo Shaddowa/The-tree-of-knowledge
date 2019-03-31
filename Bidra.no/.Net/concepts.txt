@@ -1,0 +1,7 @@
+-------------------------------------------------WHAT YOU SHOULD KNOW---------------------------------------------------
+
+.NET is a framework that runs primarily on windows and is used for building windows applications and web applications
+.NET is made out of two components: CLR - Comon Language Runtime & Class Library.
+CLR is a virtual machine component. It manages the execution of .NET programs. All .NET programs are executed by CLR.
+
+------------------------------------------------------------------------------------------------------------------------
